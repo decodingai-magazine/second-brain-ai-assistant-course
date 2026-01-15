@@ -293,7 +293,6 @@ We will deeply appreciate your support for the AI community and future readers ð
       </a><br />
       <sub>AI/ML Engineer</sub>
     </td>
-     </td>
      <td align="center">
       <a href="https://github.com/ernestol0817">
         <img src="https://github.com/ernestol0817.png" width="100px;" alt="Ernesto Larios"/><br />
