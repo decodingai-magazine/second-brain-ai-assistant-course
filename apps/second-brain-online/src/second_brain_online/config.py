@@ -48,6 +48,23 @@ class Settings(BaseSettings):
         description="Connection URI for the local MongoDB Atlas instance.",
     )
 
+    # --- Astraflow API Configuration ---
+    # Astraflow by UCloud — OpenAI-compatible platform supporting 200+ models (global endpoint)
+    # Global endpoint: https://api-us-ca.umodelverse.ai/v1  |  Sign up: https://astraflow.ucloud-global.com
+    # China endpoint:  https://api.modelverse.cn/v1         |  Sign up: https://astraflow.ucloud.cn
+    USE_ASTRAFLOW: bool = Field(
+        default=False,
+        description="When True, route LLM requests to Astraflow instead of OpenAI.",
+    )
+    ASTRAFLOW_API_KEY: str | None = Field(
+        default=None,
+        description="API key for Astraflow global endpoint (https://api-us-ca.umodelverse.ai/v1).",
+    )
+    ASTRAFLOW_CN_API_KEY: str | None = Field(
+        default=None,
+        description="API key for Astraflow China endpoint (https://api.modelverse.cn/v1).",
+    )
+
     # --- OpenAI API Configuration ---
     OPENAI_API_KEY: str = Field(
         description="API key for OpenAI service authentication.",

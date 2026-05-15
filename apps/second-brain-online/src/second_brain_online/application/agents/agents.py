@@ -54,11 +54,21 @@ class AgentWrapper:
             )
             summarizer_tool = OpenAISummarizerTool(stream=False)
 
-        model = LiteLLMModel(
-            model_id=settings.OPENAI_MODEL_ID,
-            api_base="https://api.openai.com/v1",
-            api_key=settings.OPENAI_API_KEY,
-        )
+        if settings.USE_ASTRAFLOW:
+            logger.warning(
+                "Using Astraflow (global endpoint) as the LLM backend: https://api-us-ca.umodelverse.ai/v1"
+            )
+            model = LiteLLMModel(
+                model_id=settings.OPENAI_MODEL_ID,
+                api_base="https://api-us-ca.umodelverse.ai/v1",
+                api_key=settings.ASTRAFLOW_API_KEY,
+            )
+        else:
+            model = LiteLLMModel(
+                model_id=settings.OPENAI_MODEL_ID,
+                api_base="https://api.openai.com/v1",
+                api_key=settings.OPENAI_API_KEY,
+            )
 
         agent = ToolCallingAgent(
             tools=[what_can_i_do, retriever_tool, summarizer_tool],

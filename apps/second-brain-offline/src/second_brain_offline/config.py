@@ -64,6 +64,19 @@ class Settings(BaseSettings):
         default=None, description="Secret key for Notion API authentication."
     )
 
+    # --- Astraflow API Configuration ---
+    # Astraflow by UCloud — OpenAI-compatible platform supporting 200+ models (global endpoint)
+    # Global endpoint: https://api-us-ca.umodelverse.ai/v1  |  Sign up: https://astraflow.ucloud-global.com
+    # China endpoint:  https://api.modelverse.cn/v1         |  Sign up: https://astraflow.ucloud.cn
+    ASTRAFLOW_API_KEY: str | None = Field(
+        default=None,
+        description="API key for Astraflow global endpoint (https://api-us-ca.umodelverse.ai/v1).",
+    )
+    ASTRAFLOW_CN_API_KEY: str | None = Field(
+        default=None,
+        description="API key for Astraflow China endpoint (https://api.modelverse.cn/v1).",
+    )
+
     # --- OpenAI API Configuration ---
     OPENAI_API_KEY: str = Field(
         description="API key for OpenAI service authentication.",

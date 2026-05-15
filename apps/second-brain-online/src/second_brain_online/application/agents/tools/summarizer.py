@@ -90,10 +90,16 @@ Return the document in plain text format regardless of the original format.
     def __init__(self, *args, **kwargs) -> None:
         super().__init__(*args, **kwargs)
 
-        self.__client = OpenAI(
-            base_url="https://api.openai.com/v1",
-            api_key=settings.OPENAI_API_KEY,
-        )
+        if settings.USE_ASTRAFLOW:
+            self.__client = OpenAI(
+                base_url="https://api-us-ca.umodelverse.ai/v1",
+                api_key=settings.ASTRAFLOW_API_KEY,
+            )
+        else:
+            self.__client = OpenAI(
+                base_url="https://api.openai.com/v1",
+                api_key=settings.OPENAI_API_KEY,
+            )
 
     @track
     def forward(self, text: str) -> str:
