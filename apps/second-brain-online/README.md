@@ -150,7 +150,7 @@ make local-infrastructure-up
 
 To stop the Docker infrastructure, run:
 ```bash
-make local-infrastructure-down
+make local-infrastructure-stop
 ```
 
 > [!NOTE]
