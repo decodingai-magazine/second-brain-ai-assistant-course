@@ -35,6 +35,7 @@ Note that this module is entirely independent of the offline ML pipelines. Thus,
 - [📁 Project Structure](#-project-structure)
 - [🏗️ Set Up Your Local Infrastructure](#-set-up-your-local-infrastructure)
 - [⚡️ Running the Code for Each Module](#️-running-the-code-for-each-module)
+- [🔎 Optional: Research Current Web Sources](#-optional-research-current-web-sources)
 - [🔧 Utlity Commands](#-utility-commands)
 
 # 📋 Prerequisites
@@ -207,6 +208,10 @@ For running the evaluation, plus playing around with the agent (~20 queries), th
 - Running costs Hugging Face Dedicated Endpoints (optional - you can use only the OpenAI models for summarization): ~$1 (the deployment costs $1 / hour)
 - Running time evaluation: ~15 minutes (the AI Assistant runs in real-time)
 
+
+# 🔎 Optional: Research Current Web Sources
+
+To compare the assistant's answers with recent primary sources, follow the [current web research guide](docs/current-web-research.md). It uses Parallel Search MCP in VS Code to find and read sources you can curate for your Second Brain. This is a separate, optional research workflow; the Gradio agent continues to use the course's existing tools.
 
 # 🔧 Utlity Commands
 
