@@ -36,8 +36,9 @@ its own access; the course's `OPENAI_API_KEY` does not configure Copilot.
    }
    ```
 
-3. Run **MCP: List Servers** from the Command Palette, select `parallel-search`,
-   and start it. Review the server trust prompt before enabling it.
+3. Review the configuration and enable Workspace Trust only if you trust the
+   repository. Run **MCP: List Servers** from the Command Palette, select
+   `parallel-search`, and start it.
 4. In an agent chat, use **Configure Tools** in the chat input to enable the
    server's `web_search` and `web_fetch` tools. Confirm that both tools appear
    before starting the exercise.
